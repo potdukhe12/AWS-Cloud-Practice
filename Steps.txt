@@ -1,0 +1,92 @@
+git : clone a repository nodejsapp
+	--> Repository name should be small
+==================================
+
+cd NodeJsApp
+
+npm init
+	(press enter)-->to create package.json
+
+npm install express --save
+
+
+create public/index.html
+create server.js
+
+run to check on cmd ==> node server.js
+this will start the server on port:7667
+
+=========================================
+
+AWS :
+
+Launch Instance : Ubuntu 22 
+		  64-bit
+
+Instance Type : t2.micro
+
+Add KeyPair : nodejsapp  -->use private key .ppk
+
+Launch
+
+========================================
+
+Set putty :
+
+1) Copy IP address
+port=22
+
+2) Connection --> Data --> username = ubuntu
+   Connection --> SSH --> Auth --> Credential --> private file => select path of .ppk file
+
+OK
+
+========================================
+
+Open Instance
+
+security --> add inbound rule -->all traffic + IPv4
+
+connect Instance
+
+==================================
+Under PUTTY cmd :
+
+
+git : clone a repository NodeJsApp
+Open folder NodeJsApp
+
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+	--> It will show ACTIVE(running) --> if not repeat all commands
+
+cd ..
+
+sudo docker images
+	--> to check for image files
+
+sudo docker pull hello-world
+	--> from docker official site
+
+sudo docker pull nginx
+	--> from docker official site
+
+cd nodejsapp
+sudo docker build -t nodejsapp .
+sudo docker run nodejsapp -d -p 7667:76
+
+
+******************************************
+ubuntu@ip-172-31-6-162:~/AWS-Cloud-Practice$ sudo docker run nodeapp -d -p 7667:7667
+node: bad option: -d
+******************************************
+
+
+
+
+
