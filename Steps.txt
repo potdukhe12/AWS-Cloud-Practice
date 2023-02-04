@@ -1,8 +1,12 @@
 git : clone a repository nodejsapp
 	--> Repository name should be small
+
+
+git clone https://github.com/potdukhe12/AWS-Cloud-Practice.git
+
 ==================================
 
-cd NodeJsApp
+cd nodeapp
 
 npm init
 	(press enter)-->to create package.json
@@ -45,6 +49,7 @@ OK
 
 Open Instance
 
+
 security --> add inbound rule -->all traffic + IPv4
 
 connect Instance
@@ -53,8 +58,14 @@ connect Instance
 Under PUTTY cmd :
 
 
-git : clone a repository NodeJsApp
-Open folder NodeJsApp
+{git : clone a repository NodeJsApp
+Open folder NodeJsApp}
+
+sudo apt install git
+git clone https://github.com/potdukhe12/AWS-Cloud-Practice.git
+
+sudo apt install npm
+npm install express --save
 
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common 
@@ -70,21 +81,19 @@ cd ..
 sudo docker images
 	--> to check for image files
 
-sudo docker pull hello-world
-	--> from docker official site
+{sudo docker pull hello-world
+	--> from docker official site}	--> to check
 
 sudo docker pull nginx
 	--> from docker official site
 
 cd nodejsapp
-sudo docker build -t nodejsapp .
-sudo docker run nodejsapp -d -p 7667:76
+sudo docker build -t nodeapp .
+sudo docker run -d -p 7667:7667 nodeapp
 
 
-******************************************
-ubuntu@ip-172-31-6-162:~/AWS-Cloud-Practice$ sudo docker run nodeapp -d -p 7667:7667
-node: bad option: -d
-******************************************
+Server Started at :
+<IP address>:7667
 
 
 
